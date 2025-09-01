@@ -12,7 +12,8 @@ export default function Home() {
       {/* HERO */}
       <section
         id="home"
-        className="min-h-[80vh] flex flex-col items-center justify-center text-center"
+        className="min-h-[80vh] flex flex-col items-center justify-center text-center
+                   bg-gradient-to-b from-neutral-900 via-neutral-950 to-black"
       >
         <h1 className="text-4xl md:text-6xl font-extrabold">
           Daniel Pilant

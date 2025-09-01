@@ -10,11 +10,4 @@ const config: Config = {
   theme: { extend: {} },
   plugins: [],
 };
-
-export default {
-  darkMode: "class",
-  content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
-  theme: { extend: {} },
-  plugins: [],
-};
-;
+export default config;

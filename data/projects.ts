@@ -7,7 +7,7 @@ export type Project = {
   repo?: string;
   demo?: string;
   image?: string;     // /projects/<slug>.jpg|png|webp
-  featured?: boolean; // יוצג בדף הבית
+  featured?: boolean; // Shown on homepage
 };
 
 export const projects: Project[] = [

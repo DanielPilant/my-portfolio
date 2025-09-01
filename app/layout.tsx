@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "Daniel Pilant — Portfolio",
-  description: "בונה מוצרים. מוביל קהילה. לומד בלי סוף.",
+  description: "Building products. Leading communities. Learning endlessly.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
