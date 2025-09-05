@@ -80,7 +80,7 @@ const lines = [
 
       {/* EXPERIENCE (preview) */}
       <section id="experiences" className="py-24 border-t border-neutral-800">
-        <h2 className="text-3xl font-bold mb-6 text-center">Experience</h2>
+        <h2 className="text-3xl font-bold mb-6 text-center">Community Partnership and Volunteering</h2>
         <p className="text-neutral-400 text-center max-w-2xl mx-auto">
           Leadership, teaching, and community building.
         </p>
