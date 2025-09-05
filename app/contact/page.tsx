@@ -12,7 +12,7 @@ export default function ContactPage() {
   return (
     <main className="mx-auto max-w-xl px-4 py-16 flex flex-col items-center min-h-[70vh]">
       <div className="w-full bg-neutral-900/80 rounded-2xl shadow-lg border border-neutral-800 p-8 flex flex-col items-center">
-        <h1 className="text-4xl font-extrabold mb-6 tracking-tight text-primary-400 drop-shadow-lg text-center">Contact</h1>
+        <h1 className="text-4xl font-extrabold mb-6 tracking-tight text-primary-400 drop-shadow-lg text-center">Contact Me :)</h1>
         {sent ? (
           <div className="p-4 border border-green-600/40 rounded-lg bg-green-900/20 text-green-200 w-full text-center">
             Form submitted (Demo). Can be connected to Formspree/Email later.

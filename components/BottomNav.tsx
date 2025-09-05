@@ -26,7 +26,7 @@ const TABS: Tab[] = [
       </svg>
     )
   },
-  // ✅ חדש: Projects
+  // Projects
   {
     id: "projects",
     href: "#projects",
@@ -35,6 +35,18 @@ const TABS: Tab[] = [
       <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
         <path d="M4 7a2 2 0 0 1 2-2h6l4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7Z" stroke="currentColor" strokeWidth="1.6"/>
         <path d="M12 5v4h4" stroke="currentColor" strokeWidth="1.6"/>
+      </svg>
+    )
+  },
+  // Experiences
+  {
+    id: "experiences",
+    href: "#experiences",
+    label: "Experiences",
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+        <path d="M20 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2Z" stroke="currentColor" strokeWidth="1.6"/>
+        <path d="M16 7V4a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3" stroke="currentColor" strokeWidth="1.6"/>
       </svg>
     )
   },
@@ -75,7 +87,6 @@ const TABS: Tab[] = [
 export default function BottomNav() {
   const [active, setActive] = useState<string>("home");
 
-  // הדגשת טאב לפי הסקשן הגלוי
   useEffect(() => {
     const obs = new IntersectionObserver(
       (entries) => {
@@ -108,16 +119,18 @@ export default function BottomNav() {
           return (
             <li key={t.id}>
               <Link
-                href={t.href}
-                className={`group inline-flex items-center justify-center
-                            w-12 h-12 mx-1 rounded-full transition
-                            ${isActive
-                              ? "bg-sky-500 text-neutral-900"
-                              : "text-neutral-200 hover:bg-neutral-800/70"}`}
-                aria-label={t.label}
-              >
-                {t.icon}
-              </Link>
+  href={t.href}
+  onClick={() => setActive(t.id)}
+  className={`group inline-flex items-center justify-center
+              w-12 h-12 mx-1 rounded-full transition
+              ${isActive
+                ? "bg-neutral-800 text-neutral-50"  // <-- was bg-sky-500...
+                : "text-neutral-200 hover:bg-neutral-800/70"}`}
+  aria-label={t.label}
+>
+  {t.icon}
+</Link>
+
             </li>
           );
         })}
