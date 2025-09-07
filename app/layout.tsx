@@ -1,4 +1,8 @@
 // app/layout.tsx
+/**
+ * CHANGELOG:
+ * - Simplified body styles to defer to global animated background.
+ */
 import "./globals.css";
 import Providers from "./providers";
 import Navbar from "@/components/Navbar";
@@ -30,9 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       suppressHydrationWarning
       className={`${inter.variable} ${jetbrainsMono.variable}`}
     >
-      <body
-        className="bg-gradient-to-br from-neutral-100 via-white to-neutral-200 text-neutral-900 dark:from-neutral-900 dark:via-neutral-950 dark:to-black dark:text-neutral-50 antialiased transition-colors duration-300"
-      >
+      <body className="antialiased transition-colors">
         <Providers>
           <Navbar />
           {children}

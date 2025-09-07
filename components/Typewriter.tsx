@@ -1,4 +1,6 @@
 "use client";
+// CHANGELOG:
+// - Updated typewriter styles to new palette with sharp corners.
 import { useEffect, useMemo, useRef, useState } from "react";
 
 type Props = {
@@ -65,10 +67,10 @@ export default function Typewriter({
 
   return (
     <div
-      className={`inline-flex items-center rounded-xl border border-neutral-800/60 bg-neutral-900/40 px-3 py-2 shadow-md ${className}`}
+      className={`inline-flex items-center border border-white/10 bg-white/[0.02] px-3 py-2 shadow-md ${className}`}
       aria-live="polite"
     >
-      <code className="font-mono text-base md:text-lg leading-6 text-neutral-200">
+      <code className="font-mono text-base md:text-lg leading-6 text-foreground">
         {text}
       </code>
   {/* The caret ("|") with blink animation. Note the arbitrary value for animation */}

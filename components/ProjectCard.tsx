@@ -1,3 +1,7 @@
+/**
+ * CHANGELOG:
+ * - Sharpened corners, new color system and focus styles.
+ */
 import Link from "next/link";
 import Image from "next/image";
 import type { Project } from "@/data/projects";
@@ -6,11 +10,11 @@ export default function ProjectCard({ p }: { p: Project }) {
   return (
     <Link
       href={`/projects/${p.slug}`}
-      className="group relative block overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900/60 shadow-lg transition-all duration-300 hover:border-sky-500 hover:shadow-xl"
+      className="group relative block overflow-hidden border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] transition shadow-[0_0_0_1px_rgba(255,255,255,0.02)_inset] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-info-500"
     >
       {/* Featured badge */}
       {p.featured && (
-        <span className="absolute top-3 right-3 z-10 rounded-full bg-sky-500/90 px-3 py-1 text-xs font-semibold tracking-wide text-white shadow">
+        <span className="absolute top-3 right-3 z-10 rounded-full bg-primary-500/90 px-3 py-1 text-xs font-semibold tracking-wide text-white shadow">
           Featured
         </span>
       )}
@@ -27,25 +31,25 @@ export default function ProjectCard({ p }: { p: Project }) {
             priority={false}
           />
         ) : (
-          <div className="absolute inset-0 grid place-items-center text-neutral-500 bg-neutral-800">
+          <div className="absolute inset-0 grid place-items-center text-muted-500 bg-white/[0.05]">
             No image
           </div>
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
       </div>
 
       {/* Text */}
       <div className="p-6">
-        <div className="mb-1 text-xl font-bold transition-colors duration-200 group-hover:text-sky-400">
+        <div className="mb-1 text-xl font-bold decoration-primary-400 underline-offset-4 group-hover:underline transition">
           {p.title}
         </div>
-        <div className="text-neutral-400 text-base mt-1 line-clamp-2 min-h-[2.5em]">{p.tagline}</div>
+        <div className="text-muted-500 text-base mt-1 line-clamp-2 min-h-[2.5em]">{p.tagline}</div>
 
         <div className="flex flex-wrap gap-2 mt-4">
           {p.tech.slice(0, 4).map((t) => (
             <span
               key={t}
-              className="text-xs rounded-full border border-neutral-700/80 px-2 py-1 bg-neutral-800/60 text-neutral-200"
+              className="text-xs rounded-full border border-white/10 px-2 py-1 bg-white/[0.05] text-foreground"
             >
               {t}
             </span>

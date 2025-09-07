@@ -1,3 +1,7 @@
+/**
+ * CHANGELOG:
+ * - Adopted new color tokens and sharp corners with focus styles.
+ */
 "use client";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
@@ -10,7 +14,7 @@ export default function ThemeToggle() {
   if (!mounted) {
     return (
       <button
-        className="rounded-xl border border-neutral-700 px-3 py-2 text-sm opacity-70"
+        className="border border-white/10 px-3 py-2 text-sm opacity-70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400 transition"
         aria-label="Toggle theme"
       >
         …
@@ -25,7 +29,7 @@ export default function ThemeToggle() {
     <div className="inline-flex items-center gap-2">
       <button
         onClick={() => setTheme(isDark ? "light" : "dark")}
-        className="rounded-xl border border-neutral-700 px-3 py-2 text-sm hover:bg-neutral-900 transition-colors"
+        className="border border-white/10 px-3 py-2 text-sm hover:bg-white/5 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400"
         aria-label="Toggle theme"
       >
         {isDark ? (
@@ -46,13 +50,13 @@ export default function ThemeToggle() {
         )}
       </button>
 
-  {/* System mode toggle (optional) */}
+      {/* System mode toggle (optional) */}
       <button
         onClick={() => setTheme("system")}
-        className={`rounded-xl border px-3 py-2 text-xs transition-colors
+        className={`border px-3 py-2 text-xs transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400
           ${theme === "system"
-            ? "border-sky-600 text-sky-400"
-            : "border-neutral-700 text-neutral-400 hover:bg-neutral-900"}`}
+            ? "border-primary-600 text-primary-400"
+            : "border-white/10 text-muted-500 hover:bg-white/5"}`}
       >
         System
       </button>
