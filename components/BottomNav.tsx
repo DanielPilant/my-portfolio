@@ -1,4 +1,6 @@
 "use client";
+// CHANGELOG:
+// - Removed obsolete comment reference.
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -124,7 +126,7 @@ export default function BottomNav() {
   className={`group inline-flex items-center justify-center
               w-12 h-12 mx-1 rounded-full transition
               ${isActive
-                ? "bg-neutral-800 text-neutral-50"  // <-- was bg-sky-500...
+                ? "bg-neutral-800 text-neutral-50"
                 : "text-neutral-200 hover:bg-neutral-800/70"}`}
   aria-label={t.label}
 >
