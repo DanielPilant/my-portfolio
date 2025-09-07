@@ -3,11 +3,17 @@ import "./globals.css";
 import Providers from "./providers";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],            // Suitable for English/ASCII text
-  variable: "--font-jetbrains",  // The CSS var name that will be connected to Tailwind
+  subsets: ["latin"],
+  variable: "--font-jetbrains",
   display: "swap",
 });
 
@@ -18,8 +24,15 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="he" dir="ltr" suppressHydrationWarning className={jetbrainsMono.variable}>
-      <body className="bg-neutral-950 text-neutral-50 antialiased transition-colors duration-300">
+    <html
+      lang="he"
+      dir="ltr"
+      suppressHydrationWarning
+      className={`${inter.variable} ${jetbrainsMono.variable}`}
+    >
+      <body
+        className="bg-gradient-to-br from-neutral-100 via-white to-neutral-200 text-neutral-900 dark:from-neutral-900 dark:via-neutral-950 dark:to-black dark:text-neutral-50 antialiased transition-colors duration-300"
+      >
         <Providers>
           <Navbar />
           {children}
