@@ -6,11 +6,11 @@ export default function ProjectCard({ p }: { p: Project }) {
   return (
     <Link
       href={`/projects/${p.slug}`}
-      className="group block overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900/60 hover:border-primary-500 shadow-lg hover:shadow-xl transition-all duration-300 relative"
+      className="group relative block overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900/60 shadow-lg transition-all duration-300 hover:border-sky-500 hover:shadow-xl"
     >
       {/* Featured badge */}
       {p.featured && (
-        <span className="absolute top-3 right-3 z-10 bg-primary-500/90 text-xs text-white px-3 py-1 rounded-full shadow font-semibold tracking-wide">
+        <span className="absolute top-3 right-3 z-10 rounded-full bg-sky-500/90 px-3 py-1 text-xs font-semibold tracking-wide text-white shadow">
           Featured
         </span>
       )}
@@ -36,7 +36,9 @@ export default function ProjectCard({ p }: { p: Project }) {
 
       {/* Text */}
       <div className="p-6">
-        <div className="text-xl font-bold mb-1 group-hover:text-primary-400 transition-colors duration-200">{p.title}</div>
+        <div className="mb-1 text-xl font-bold transition-colors duration-200 group-hover:text-sky-400">
+          {p.title}
+        </div>
         <div className="text-neutral-400 text-base mt-1 line-clamp-2 min-h-[2.5em]">{p.tagline}</div>
 
         <div className="flex flex-wrap gap-2 mt-4">
